@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    // Permite usar ESM real en Node (import/export moderno).
+    "module": "NodeNext",
+    // Hace que TypeScript entienda cómo Node resuelve módulos ESM.
+    "moduleResolution": "NodeNext",
+    // Todo el código fuente está en src.
+    "rootDir": "./src",
+    // Cuando hagas npm run build, se compila a dist.
+    "outDir": "./dist",
+    // Modo estricto completo (esto es profesional).
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    // Activa tipos globales de Node: (process, buffer, etc)
+    "types": ["node"]
+  },
+  "include": ["src"]
+}
