@@ -41,7 +41,7 @@ export type Product = InferSchemaType<typeof productSchema>;
 
 // export type Product: Al exportarlo, puedo ir a cualquier otro archivo (como mi componente de React o mi controlador) e importar Product. Así, cuando escriba product., VS Code me sugerirá automáticamente los campos como name, price, etc.
 
-export const productModel = model("Product", productSchema);
+export const ProductModel = model("Product", productSchema);
 
 // Clean Code aplicado 
     // Validaciones mínimas en schema

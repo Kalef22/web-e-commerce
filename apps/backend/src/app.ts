@@ -1,5 +1,6 @@
 import express from "express";
-import cors from "cors" //cors en Node.js sirve para configurar quién tiene permiso para hablar con mi API.
+import cors from "cors"; //cors en Node.js sirve para configurar quién tiene permiso para hablar con mi API.
+import productRoutes from "./routes/product.routes.js";
 
 export function createApp() {
     const app = express();
@@ -11,6 +12,8 @@ export function createApp() {
     app.get("/health", (_req, res)=>{
         res.status(200).json({ok: true})
     });
+
+    app.use("/api/products", productRoutes);
 
     return app;
 }
