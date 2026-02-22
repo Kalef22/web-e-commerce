@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors"; //cors en Node.js sirve para configurar quién tiene permiso para hablar con mi API.
 import productRoutes from "./routes/product.routes.js";
+import { errorHandler } from "./middlewares/error-handler.js"
 
 export function createApp() {
     const app = express();
@@ -13,7 +14,11 @@ export function createApp() {
         res.status(200).json({ok: true})
     });
 
+    // routes
     app.use("/api/products", productRoutes);
 
+    // Importante: el error handler debe ir después de todas las rutas.
+    app.use(errorHandler);
+    
     return app;
 }
